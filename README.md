@@ -1,2 +1,17 @@
 # wox-cli
-scaffold for create basic react component
+
+scaffold for wox
+
+## Usage
+
+* help
+
+```shell
+$ wox --help
+```
+
+* init
+
+```shell
+$ wox init [type]
+```
