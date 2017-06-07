@@ -3,10 +3,11 @@
 'use strict';
 const program = require('commander');
 const woxInit = require('../lib/wox');
+const pkgJSON = require('../package.json');
 let cmd, type;
 
 program
-  .version('0.0.1')
+  .version(pkgJSON.version)
   .command('init [type]')
   .description('initialize, default: react component')
   .action((type) => {
