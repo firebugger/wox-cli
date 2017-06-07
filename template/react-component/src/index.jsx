@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Button } from 'antd';
 
 class BasicComponent extends Component {
   constructor(props) {
@@ -19,14 +20,12 @@ class BasicComponent extends Component {
 
   render() {
     return (<div className="wrapper">
-      <span
-        role="button"
-        tabIndex={0}
-        className="button"
+      <Button
+        type="primary"
         onClick={this.onToggle}
       >
         {this.state.status}
-      </span>
+      </Button>
     </div>);
   }
 }
