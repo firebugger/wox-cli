@@ -9,7 +9,7 @@
     "prebuild": "npm run clean && npm run lint",
     "build:script": "webpack",
     "build:style": "lessc ./src/index.less ./lib/index.css",
-    "build": "npm run build:script && npm run build:style",
+    "build": "npm run test && npm run build:script && npm run build:style",
     "test": "mocha ./test/**/*.test.js"
   },
   "keywords": [
