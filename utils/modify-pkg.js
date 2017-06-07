@@ -2,6 +2,8 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = (repoInfo) => {
+  if (!repoInfo) return;
+
   let pkgJSON;
   const pkgJSONPath = path.resolve(process.cwd(), './package.json');
   try {

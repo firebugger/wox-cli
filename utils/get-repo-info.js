@@ -22,6 +22,7 @@ module.exports = () => {
         console.log('read `.git/config` error: ', e);
       }
     }
+    return null;
   } catch(e) {
     console.log('check `.git` error: ', e);
   }
