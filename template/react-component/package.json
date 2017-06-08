@@ -7,9 +7,9 @@
     "lint": "eslint --fix ./src/**/*.jsx",
     "clean": "rimraf ./lib",
     "prebuild": "npm run clean && npm run lint",
-    "build:script": "webpack",
+    "build:script": "babel ./src/index.jsx --out-file ./lib/index.js",
     "build:style": "lessc ./src/index.less ./lib/index.css",
-    "build": "npm run test && npm run build:script && npm run build:style",
+    "build": "npm run test && npm run build:style && npm run build:script",
     "test": "mocha ./test/**/*.test.js"
   },
   "keywords": [
@@ -31,13 +31,14 @@
     "eslint-plugin-react": "^7.0.1",
     "less": "^2.7.2",
     "mocha": "^3.4.2",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "rimraf": "^2.6.1",
-    "webpack": "^2.6.1"
+    "rimraf": "^2.6.1"
   },
   "peerDependencies": {
     "antd": "^2.10.4",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
