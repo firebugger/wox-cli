@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'antd/lib/button/index';
+import Button from 'antd/lib/button/index';
 
 class BasicComponent extends Component {
   constructor(props) {
