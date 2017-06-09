@@ -29,7 +29,7 @@ $ wox --help
 
 * init [type]
 
-> `init` 命令用于初始化一个模板项目，目前 `[type]` 默认并仅支持 `react`，用于初始化一个 react 基础组件
+> `init` 命令用于初始化一个模板项目，`[type]` 默认支持 `react`，用于初始化一个 react 基础组件；支持 `react-admin-toolkit`，用于初始化一个后台项目模板
 
 ```
 $ wox init [type]
