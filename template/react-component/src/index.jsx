@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'antd/lib/button/index';
 
-class BasicComponent extends Component {
+/**
+ * 组件名遵循 `Wox` 前缀的规范
+ */
+class WoxComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -31,12 +34,12 @@ class BasicComponent extends Component {
   }
 }
 
-BasicComponent.propTypes = {
+WoxComponent.propTypes = {
   status: PropTypes.string,
 };
 
-BasicComponent.defaultProps = {
+WoxComponent.defaultProps = {
   status: 'off',
 };
 
-export default BasicComponent;
+export default WoxComponent;
