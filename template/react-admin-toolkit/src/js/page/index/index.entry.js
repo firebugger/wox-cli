@@ -11,7 +11,7 @@ const rootEle = document.getElementById('app');
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   reducers,
-  applyMiddleware(sagaMiddleware),
+  applyMiddleware(sagaMiddleware)
 );
 sagaMiddleware.run(rootSaga);
 
@@ -22,7 +22,7 @@ function render() {
         <List />
       </div>
     </Provider>,
-    rootEle,
+    rootEle
   );
 }
 

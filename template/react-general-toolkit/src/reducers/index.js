@@ -7,10 +7,10 @@ const defaultState = {
 
 function fetchList(state = defaultState, action) {
   switch (action.type) {
-    case FEATCH_LIST_SUCCESS:
-      return fromJS(state).set('list', action.payload).toJS();
-    default:
-      return state;
+  case FEATCH_LIST_SUCCESS:
+    return fromJS(state).set('list', action.payload).toJS();
+  default:
+    return state;
   }
 }
 

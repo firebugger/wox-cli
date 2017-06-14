@@ -5,7 +5,7 @@
   "main": "index.js",
   "theme": "",
   "scripts": {
-    "lint": "eslint --ignore-pattern *.less --fix ./src/**/*",
+    "lint": "eslint --fix ./src/**/*",
     "start": "npm-run-all --parallel open:src",
     "open:src": "babel-node server.js",
     "clean": "rimraf dist",
@@ -25,6 +25,7 @@
   "dependencies": {
     "antd": "^2.8.3",
     "babel-runtime": "^6.20.0",
+    "eslint-config-wox": "0.0.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "immutable": "^3.8.1",
     "prop-types": "^15.5.10",
@@ -52,7 +53,7 @@
     "cross-env": "^2.0.1",
     "css-loader": "^0.25.0",
     "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-wox": "*",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
