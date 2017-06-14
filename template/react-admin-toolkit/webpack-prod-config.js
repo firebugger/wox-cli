@@ -100,7 +100,7 @@ for (let j = 0; j < entrysArr.length; j++) {
   const pathname = path.basename(entrysArr[j]).split('.')[0];
   const conf = {
     filename: `${pathname}.html`,
-    template: 'tpl.html',
+    template: './src/template.html',
     inject: 'body',
     favicon: './src/favicon.ico',
     title: pathname,

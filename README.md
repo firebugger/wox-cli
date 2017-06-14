@@ -1,4 +1,4 @@
-# wox-cli
+# wox-cli  [![image](https://img.shields.io/npm/v/wox-cli.svg)](https://www.npmjs.com/package/wox-cli)
 
 scaffold for wox
 
@@ -27,10 +27,14 @@ $ wox --help
     -V, --version  output the version number
 ```
 
-* init [type]
-
-> `init` 命令用于初始化一个模板项目，`[type]` 默认支持 `react`，用于初始化一个 react 基础组件；支持 `react-admin-toolkit`，用于初始化一个后台项目模板
+* init [[type]](#type)
 
 ```
 $ wox init [type]
 ```
+
+## Type
+
+* **react** *(default)*: 初始化一个 `react` 基础组件
+* **react-admin-toolkit**: 初始化一个后台系统页面的项目
+* **react-general-toolkit**: 初始化一个通用的项目

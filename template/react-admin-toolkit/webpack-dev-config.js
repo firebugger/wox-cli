@@ -15,10 +15,14 @@ const re = /[\w\W]*src([\w\W]+)\.js$/;
 for (let i = 0; i < files.length; i++) {
   if (/\.entry\.js$/.test(files[i])) {
     const filei = files[i].replace(re, '$1').replace('/js/page/', '');
-    entrys[filei] = ['./src/webpack-public-path',
+    entrys[filei] = [
+      './webpack-public-path',
       'react-hot-loader/patch',
-      'webpack-hot-middleware/client?reload=true', `${__dirname}/${files[i]}`];
+      'webpack-hot-middleware/client?reload=true',
+      `${__dirname}/${files[i]}`
+    ];
     entrysArr.push(filei);
+
     const confe = `src/${files[i]}`;
     confEntry.push(path.resolve(__dirname, confe));
   }
@@ -90,7 +94,7 @@ for (let j = 0; j < entrysArr.length; j++) {
   const pathname = path.basename(entrysArr[j]).split('.')[0];
   const conf = {
     filename: `${pathname}.html`,
-    template: 'tpl.html',
+    template: './src/template.html',
     inject: 'body',
     favicon: './src/favicon.ico',
     title: pathname,

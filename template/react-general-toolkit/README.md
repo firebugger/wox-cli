@@ -1,6 +1,6 @@
-# react-admin-toolkit
+# react-general-toolkit
 
-> 项目中所用到的技术栈：react + redux + redux-saga
+> 通用 react 套件。项目中所用到的技术栈：react + redux + redux-saga
 
 ### 安装
 

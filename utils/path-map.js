@@ -3,5 +3,6 @@
  */
 module.exports = {
   'react': 'react-component',
-  'react-admin-toolkit': 'react-admin-toolkit'
+  'react-admin-toolkit': 'react-admin-toolkit',
+  'react-general-toolkit': 'react-general-toolkit'
 };
