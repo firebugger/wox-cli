@@ -10,7 +10,7 @@ const entrysArr = [];
 const re = /[\w\W]*src\/([\w\W]+)\.js$/;
 
 for (let i = 0; i < files.length; i++) {
-  if (/\.entry\.jsx?$/.test(files[i])) {
+  if (/\.entry\.js$/.test(files[i])) {
     const filei = files[i].replace(re, '$1');
     entrys[filei] = `./${files[i]}`;
     entrysArr.push(filei);
@@ -114,4 +114,4 @@ for (let j = 0; j < entrysArr.length; j++) {
   config.plugins.push(new HtmlWebpackPlugin(conf));
 }
 
-export default config;
+module.exports = config;

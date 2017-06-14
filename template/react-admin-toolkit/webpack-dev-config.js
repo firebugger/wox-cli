@@ -13,7 +13,7 @@ const confEntry = [];
 const re = /[\w\W]*src([\w\W]+)\.js$/;
 
 for (let i = 0; i < files.length; i++) {
-  if (/\.entry\.jsx?$/.test(files[i])) {
+  if (/\.entry\.js$/.test(files[i])) {
     const filei = files[i].replace(re, '$1').replace('/js/page/', '');
     entrys[filei] = ['./src/webpack-public-path',
       'react-hot-loader/patch',
