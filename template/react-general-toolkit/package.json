@@ -24,17 +24,15 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^2.8.3",
+    "axios": "^0.16.2",
     "babel-runtime": "^6.20.0",
-    "eslint-config-wox": "0.0.2",
-    "extract-text-webpack-plugin": "^1.0.1",
     "immutable": "^3.8.1",
     "prop-types": "^15.5.10",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",
-    "redux-saga": "^0.12.0",
-    "reqwest": "^2.0.5"
+    "redux-saga": "^0.12.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",

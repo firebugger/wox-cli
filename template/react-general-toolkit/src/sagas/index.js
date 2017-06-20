@@ -1,9 +1,9 @@
 import { call, put } from 'redux-saga/effects';
 import { takeLatest } from 'redux-saga';
-import reqwest from 'reqwest';
+import axios from 'axios';
 import { actions, FEATCH_LIST } from '../actions';
 
-const fetchData = data => reqwest(data).then(res => res);
+const fetchData = data => axios(data).then(res => res.data);
 
 function* fetchList() {
   try {
