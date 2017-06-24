@@ -1,0 +1,23 @@
+{
+  "presets": [
+    ["latest", {
+      "es2015": {
+        "loose": true
+      }
+    }],
+    "react",
+    "stage-0"
+  ],
+  "plugins": [
+    ["import", { "style": "css", "libraryName": "antd" }],
+    "react-hot-loader/babel",
+    [
+      "transform-runtime", {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      }
+    ]
+  ]
+}
