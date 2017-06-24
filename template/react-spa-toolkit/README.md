@@ -1,6 +1,6 @@
 # react-spa-toolkit
 
-> 单页面应用 react 套件。项目中所用到的技术栈：react + redux + redux-saga + react-router
+> 单页面应用套件。项目中所用到的技术栈：react + redux + redux-saga + react-router + css-modules
 
 ### 安装
 
