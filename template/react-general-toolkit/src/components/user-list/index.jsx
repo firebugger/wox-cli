@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Table from 'antd/lib/table';
+import classNames from 'classnames/bind';
+import styles from './style.mod.less';
+
+const cx = classNames.bind(styles);
 
 class UserList extends Component {
   constructor(props) {
@@ -19,7 +23,7 @@ class UserList extends Component {
 
   render() {
     return (
-      <div>
+      <div className={cx('user-list')}>
         <Table dataSource={this.props.dataSource} columns={this.columns} rowKey="id" />
       </div>
     );

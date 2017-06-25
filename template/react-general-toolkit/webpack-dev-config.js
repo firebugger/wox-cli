@@ -43,8 +43,12 @@ const config = {
       },
       {
         test: /\.(less|css)$/,
-        include: path.resolve(__dirname, './src'),
+        exclude: /\.mod\.(less|css)/,
         loader: ExtractTextPlugin.extract('style', 'css!postcss?parser=postcss-less')
+      },
+      {
+        test: /\.mod\.(less|css)$/,
+        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss?parser=postcss-less')
       },
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
