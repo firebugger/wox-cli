@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const pxtorem = require('postcss-pxtorem');
 const find = require('find');
 const path = require('path');
@@ -41,6 +42,7 @@ const config = {
       chunks: entrysArr,
       minChunks: Math.ceil(entrysArr.length * 2 / 3),
     }),
+    new ExtractTextPlugin('[name].css')
   ],
   resolve: {
     modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
@@ -59,24 +61,13 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.less$/,
-        include: path.resolve(__dirname, 'src/js'),
-        loader: 'style!css!postcss?parser=postcss-less',
+        test: /\.(less|css)$/,
+        exclude: /\.mod\.(less|css)/,
+        loader: ExtractTextPlugin.extract('style', 'css!postcss?parser=postcss-less')
       },
       {
-        test: /\.less$/,
-        include: path.resolve(__dirname, 'src/styles'),
-        loader: 'style!css!postcss?parser=postcss-less',
-      },
-      {
-        test: /\.css$/,
-        include: path.resolve(__dirname, 'src/styles'),
-        loader: 'style!css!postcss',
-      },
-      {
-        test: /\.css$/,
-        include: path.resolve(__dirname, 'node_modules'),
-        loader: 'style!css!postcss',
+        test: /\.mod\.(less|css)$/,
+        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss?parser=postcss-less')
       },
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,

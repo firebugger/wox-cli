@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import precss from 'precss';
 import autoprefixer from 'autoprefixer';
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 const config = {

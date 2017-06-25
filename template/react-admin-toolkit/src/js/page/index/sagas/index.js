@@ -1,7 +1,7 @@
 import { call, put } from 'redux-saga/effects';
 import { takeLatest } from 'redux-saga';
 import reqwest from 'reqwest';
-import { actions, FEATCH_LIST } from './actions';
+import { actions, FEATCH_LIST } from '../actions';
 
 const fetchData = data => reqwest(data).then(res => res);
 

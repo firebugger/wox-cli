@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import precss from 'precss';
 import autoprefixer from 'autoprefixer';
 import px2rem from 'postcss-pxtorem';
@@ -46,6 +47,7 @@ const config = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('[name].css')
   ],
   resolve: {
     modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
@@ -63,18 +65,13 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.less$/,
-        include: path.resolve(__dirname, 'src/js'),
-        loader: 'style!css!postcss?parser=postcss-less',
+        test: /\.(less|css)$/,
+        exclude: /\.mod\.(less|css)/,
+        loader: ExtractTextPlugin.extract('style', 'css!postcss?parser=postcss-less')
       },
       {
-        test: /\.less$/,
-        include: path.resolve(__dirname, 'src/styles'),
-        loader: 'style!css!postcss?parser=postcss-less',
-      },
-      {
-        test: /\.css$/,
-        loader: 'style!css!postcss',
+        test: /\.mod\.(less|css)$/,
+        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss?parser=postcss-less')
       },
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,

@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { FEATCH_LIST_SUCCESS } from './actions';
+import { FEATCH_LIST_SUCCESS } from '../actions';
 
 const defaultState = {
   list: [],
