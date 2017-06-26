@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import { actions } from '../../actions';
 import styles from './style.mod.less';
 import UserList from '../../components/user-list'
+import WoxBreadcrumb from 'wox-admin-breadcrumb';
 
 const cx = classNames.bind(styles);
 
@@ -15,6 +16,9 @@ class App extends Component {
   render() {
     return(
       <div className={cx('app')}>
+        <WoxBreadcrumb items={[
+          { title: '用户列表', href: '/list.html' },
+        ]} />
         <UserList dataSource={this.props.list} />
       </div>
     )

@@ -5,6 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas';
 import createStore from './store/createStore';
 import App from './containers/app';
+import './styles/index.less';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(sagaMiddleware);
