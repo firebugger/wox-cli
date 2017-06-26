@@ -8,7 +8,7 @@
     "clean": "rimraf ./lib",
     "prebuild": "npm run clean && npm run lint",
     "build:script": "babel ./src/index.jsx --out-file ./lib/index.js",
-    "build:style": "lessc ./src/index.less ./lib/index.css",
+    "build:style": "mkdir ./lib && cp ./src/*.less ./lib",
     "build": "npm run test && npm run build:style && npm run build:script",
     "test": "mocha ./test/**/*.test.js"
   },
@@ -36,6 +36,7 @@
   },
   "peerDependencies": {
     "antd": "^2.10.4",
+    "classnames": "^2.2.5",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
