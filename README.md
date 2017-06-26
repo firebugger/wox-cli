@@ -35,7 +35,18 @@ $ wox init [type]
 
 ## Type
 
-* **react** *(default)*: 初始化一个 `react` 基础组件
-* **react-admin-toolkit**: 初始化一个后台系统页面的项目
-* **react-general-toolkit**: 初始化一个通用的项目
-* **react-spa-toolkit**: 初始化一个单页面应用的项目
+#### react *(default)*
+
+> 初始化一个 `react` 基础组件。支持 `less`、`css-modules`
+
+#### react-admin-toolkit
+
+> 初始化一个后台系统页面的项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
+
+#### react-general-toolkit
+
+> 初始化一个通用的项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
+
+#### react-spa-toolkit
+
+> 初始化一个单页面应用的项目。支持 `react-router`、`redux`、`redux-saga`、`less`、`css-modules`
