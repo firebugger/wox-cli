@@ -50,3 +50,7 @@ $ wox init [type]
 #### react-spa-toolkit
 
 > 初始化一个单页面应用的项目。支持 `react-router`、`redux`、`redux-saga`、`less`、`css-modules`
+
+## TODO
+
+- [ ] webpack 升级到 2.x(or 3.x)
