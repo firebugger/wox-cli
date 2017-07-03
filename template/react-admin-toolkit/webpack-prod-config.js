@@ -9,6 +9,7 @@ const files = find.fileSync('./src/js/');
 const entrys = {};
 const entrysArr = [];
 const re = /[\w\W]*src\/([\w\W]+)\.js$/;
+const currentDir = __dirname.substr(__dirname.lastIndexOf('/') + 1);
 
 for (let i = 0; i < files.length; i++) {
   if (/\.entry\.js$/.test(files[i])) {
@@ -22,7 +23,7 @@ const config = {
   entry: entrys,
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '//static.quimg.com/gtour/dist/',
+    publicPath: `//static.quimg.com/${currentDir}/dist/`,
     filename: '[name].js',
   },
   plugins: [
