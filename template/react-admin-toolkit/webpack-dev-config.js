@@ -93,7 +93,6 @@ for (let j = 0; j < entrysArr.length; j++) {
     filename: `${pathname}.html`,
     template: './src/template.html',
     inject: 'body',
-    favicon: './src/favicon.ico',
     title: pathname,
     hash: true,
     minify: {
