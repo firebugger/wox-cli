@@ -5,15 +5,20 @@ const pxtorem = require('postcss-pxtorem');
 const find = require('find');
 const path = require('path');
 
+const currentDir = __dirname.substr(__dirname.lastIndexOf('/') + 1);
 const files = find.fileSync('./src/js/');
 const entrys = {};
 const entrysArr = [];
-const re = /[\w\W]*src\/([\w\W]+)\.js$/;
-const currentDir = __dirname.substr(__dirname.lastIndexOf('/') + 1);
+const isWindows = /^win/.test(process.platform);
+const regSlash = isWindows ? '\\\\' : '\/';
+const re = new RegExp('[\\w\\W]*src' + regSlash + '([\\w\\W]+)\\.js$');
+for(var i=0;i<files.length;i++){
+  if(/\.entry\.js$/.test(files[i])){
+    let filei = files[i].replace(re,'$1');
 
-for (let i = 0; i < files.length; i++) {
-  if (/\.entry\.js$/.test(files[i])) {
-    const filei = files[i].replace(re, '$1');
+    if (isWindows) {
+      filei = filei.replace(/\\/g, '/');
+    }
     entrys[filei] = `./${files[i]}`;
     entrysArr.push(filei);
   }
