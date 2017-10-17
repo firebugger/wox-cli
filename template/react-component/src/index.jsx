@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'antd/lib/button/index';
+import { Button } from 'antd';      // 依赖的 `antd` 组件必须按照这种方式引入，不需要手动引用样式文件，`babel-plugin-import` 插件会自动引入
 import classNames from 'classnames/bind';
 import styles from './style.mod.less';
 
