@@ -3,7 +3,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import precss from 'precss';
 import autoprefixer from 'autoprefixer';
-import px2rem from 'postcss-pxtorem';
 const path = require('path');
 const find = require('find');
 
@@ -17,7 +16,6 @@ for (let i = 0; i < files.length; i++) {
   if (/\.entry\.js$/.test(files[i])) {
     const filei = files[i].replace(re, '$1').replace('/js/page/', '');
     entrys[filei] = [
-      './webpack-public-path',
       'react-hot-loader/patch',
       'webpack-hot-middleware/client?reload=true',
       `${__dirname}/${files[i]}`

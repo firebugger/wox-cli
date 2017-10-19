@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const pxtorem = require('postcss-pxtorem');
 const find = require('find');
 const path = require('path');
 
