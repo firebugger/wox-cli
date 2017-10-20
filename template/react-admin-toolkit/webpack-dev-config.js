@@ -73,11 +73,11 @@ const config = {
       },
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
-        loader: 'url?limit=10000',
+        loader: 'url?limit=10000000',
       },
       {
         test: /\.(gif|jpe?g|png|ico)$/,
-        loader: 'url?limit=10000',
+        loader: 'url?limit=10000000',
       },
     ],
   },
