@@ -90,6 +90,7 @@ for (let j = 0; j < entrysArr.length; j++) {
   const conf = {
     filename: `${pathname}.html`,
     template: './src/template.html',
+    favicon: './src/favicon.ico',
     inject: 'body',
     title: pathname,
     hash: true,
