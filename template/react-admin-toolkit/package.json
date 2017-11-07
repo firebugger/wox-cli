@@ -33,7 +33,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.12.0",
-    "wox-admin-breadcrumb": "^0.1.0"
+    "wox-admin-breadcrumb": "*"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
