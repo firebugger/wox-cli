@@ -1,7 +1,8 @@
 import webpack from 'webpack';
 import precss from 'precss';
 import autoprefixer from 'autoprefixer';
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import DashboardPlugin from 'webpack-dashboard/plugin';
 const path = require('path');
 
 const config = {
@@ -28,7 +29,8 @@ const config = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin('styles.css'),
+    new DashboardPlugin()
   ],
   resolve: {
     modulesDirectories: ['node_modules'],

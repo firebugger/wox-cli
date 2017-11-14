@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint --fix ./src/**/*",
     "start": "npm-run-all --parallel open:src",
-    "open:src": "babel-node server.js --max_old_space_size=2000",
+    "open:src": "webpack-dashboard -- babel-node server.js --max_old_space_size=2000",
     "clean": "rimraf dist",
     "build:webpack": "webpack --config webpack-prod-config.js --progress --colors",
     "build": "npm-run-all clean lint build:webpack"
@@ -66,6 +66,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
+    "webpack-dashboard": "^1.0.2",
     "webpack-dev-middleware": "^1.8.2",
     "webpack-hot-middleware": "^2.12.2"
   }

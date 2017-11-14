@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import precss from 'precss';
 import autoprefixer from 'autoprefixer';
+import DashboardPlugin from 'webpack-dashboard/plugin';
 const path = require('path');
 const find = require('find');
 
@@ -45,7 +46,8 @@ const config = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css'),
+    new DashboardPlugin()
   ],
   resolve: {
     modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
