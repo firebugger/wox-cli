@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const autoprefixer = require('autoprefixer');
+const precss = require('precss');
 const env = process.env.NODE_ENV;
 
 const config = {
@@ -41,7 +43,8 @@ const config = {
         loader: 'url?limit=1024&name=[name]-[sha512:hash:base64:7].[ext]&outputPath=/images/'
       }
     ]
-  }
+  },
+  postcss: () => [precss, autoprefixer],
 };
 
 module.exports = config;

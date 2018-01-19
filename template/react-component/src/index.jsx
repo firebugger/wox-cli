@@ -28,6 +28,7 @@ class WoxComponent extends Component {
 
   render() {
     return (<div className={cx('wrapper')}>
+      <span className={cx('inner')}>click btn: </span>
       <Button
         type="primary"
         onClick={this.onToggle}
