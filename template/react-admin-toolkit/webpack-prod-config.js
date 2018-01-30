@@ -1,19 +1,23 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const pxtorem = require('postcss-pxtorem');
 const find = require('find');
 const path = require('path');
 
+const currentDir = __dirname.substr(__dirname.lastIndexOf('/') + 1);
 const files = find.fileSync('./src/js/');
 const entrys = {};
 const entrysArr = [];
-const re = /[\w\W]*src\/([\w\W]+)\.js$/;
-const currentDir = __dirname.substr(__dirname.lastIndexOf('/') + 1);
+const isWindows = /^win/.test(process.platform);
+const regSlash = isWindows ? '\\\\' : '\/';
+const re = new RegExp('[\\w\\W]*src' + regSlash + '([\\w\\W]+)\\.js$');
+for(var i=0;i<files.length;i++){
+  if(/\.entry\.js$/.test(files[i])){
+    let filei = files[i].replace(re,'$1');
 
-for (let i = 0; i < files.length; i++) {
-  if (/\.entry\.js$/.test(files[i])) {
-    const filei = files[i].replace(re, '$1');
+    if (isWindows) {
+      filei = filei.replace(/\\/g, '/');
+    }
     entrys[filei] = `./${files[i]}`;
     entrysArr.push(filei);
   }
@@ -72,11 +76,11 @@ const config = {
       },
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
-        loader: 'url?limit=10000',
+        loader: 'url?limit=1024',
       },
       {
         test: /\.(gif|jpe?g|png|ico)$/,
-        loader: 'url?limit=10000',
+        loader: 'url?limit=1024',
       },
     ],
   },
@@ -93,8 +97,8 @@ for (let j = 0; j < entrysArr.length; j++) {
   const conf = {
     filename: `${pathname}.html`,
     template: './src/template.html',
-    inject: 'body',
     favicon: './src/favicon.ico',
+    inject: 'body',
     title: pathname,
     hash: false,
     minify: {

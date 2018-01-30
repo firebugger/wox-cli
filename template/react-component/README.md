@@ -6,6 +6,12 @@
 | ---- | ---- | ---- | ---- |
 | onFocus | 获取焦点 | Function | |
 
+## Development
+
+```
+$ npm run start
+```
+
 ## Build
 
 ```

@@ -9,5 +9,5 @@ export const FETCH_USERS_FAIL = 'FETCH_USERS_FAIL';
  * action creators
  */
 export const fetchUsers = () => ({ type: FETCH_USERS });
-export const fetchUsersSuccess = (data) => ({type: FETCH_USERS_SUCCESS, data });
+export const fetchUsersSuccess = (data) => ({ type: FETCH_USERS_SUCCESS, data });
 export const fetchUsersFail = () => ({ type: FETCH_USERS_FAIL });

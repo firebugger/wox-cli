@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import precss from 'precss';
 import autoprefixer from 'autoprefixer';
-import px2rem from 'postcss-pxtorem';
+import DashboardPlugin from 'webpack-dashboard/plugin';
 const path = require('path');
 const find = require('find');
 
@@ -17,7 +17,6 @@ for (let i = 0; i < files.length; i++) {
   if (/\.entry\.js$/.test(files[i])) {
     const filei = files[i].replace(re, '$1').replace('/js/page/', '');
     entrys[filei] = [
-      './webpack-public-path',
       'react-hot-loader/patch',
       'webpack-hot-middleware/client?reload=true',
       `${__dirname}/${files[i]}`
@@ -47,7 +46,8 @@ const config = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css'),
+    new DashboardPlugin()
   ],
   resolve: {
     modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
@@ -75,11 +75,11 @@ const config = {
       },
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
-        loader: 'url?limit=10000',
+        loader: 'url?limit=10000000',
       },
       {
         test: /\.(gif|jpe?g|png|ico)$/,
-        loader: 'url?limit=10000',
+        loader: 'url?limit=10000000',
       },
     ],
   },
@@ -92,8 +92,8 @@ for (let j = 0; j < entrysArr.length; j++) {
   const conf = {
     filename: `${pathname}.html`,
     template: './src/template.html',
-    inject: 'body',
     favicon: './src/favicon.ico',
+    inject: 'body',
     title: pathname,
     hash: true,
     minify: {
