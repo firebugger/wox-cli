@@ -7,6 +7,7 @@ import createStore from './store/createStore';
 import App from './containers/app';
 import intl from 'react-intl-universal';
 
+// title
 document.title = intl.get('pages.index.documentTitle');
 
 const sagaMiddleware = createSagaMiddleware();
