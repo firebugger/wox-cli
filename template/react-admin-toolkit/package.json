@@ -6,11 +6,12 @@
   "theme": "",
   "scripts": {
     "lint": "eslint --fix ./src/**/*",
-    "start": "npm-run-all --parallel open:src",
+    "check": "modules-version-check --cli yarn update",
+    "start": "npm-run-all check open:src",
     "open:src": "webpack-dashboard -- babel-node server.js --max_old_space_size=2000",
     "clean": "rimraf dist",
     "build:webpack": "webpack --config webpack-prod-config.js --progress --colors",
-    "build": "npm-run-all clean lint build:webpack"
+    "build": "npm-run-all clean lint check build:webpack"
   },
   "keywords": [
     "react",
@@ -23,7 +24,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "antd": "^2.8.3",
+    "antd": "^2.13.11",
     "axios": "^0.16.2",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.10",
@@ -57,6 +58,7 @@
     "file-loader": "^1.1.5",
     "find": "^0.2.7",
     "html-webpack-plugin": "^2.22.0",
+    "modules-version-check": "*",
     "npm-run-all": "^3.1.0",
     "postcss-less": "^0.15.0",
     "postcss-loader": "^0.13.0",

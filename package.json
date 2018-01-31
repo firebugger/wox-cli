@@ -1,6 +1,6 @@
 {
   "name": "wox-cli",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "scaffold for create component, toolkit and so on",
   "main": "lib/wox.js",
   "bin": {
