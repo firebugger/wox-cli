@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
 import { actions } from '../../actions';
 import styles from './style.mod.less';
-import UserList from '../../components/user-list'
+import UserList from '../../components/user-list';
 
 const cx = classNames.bind(styles);
 

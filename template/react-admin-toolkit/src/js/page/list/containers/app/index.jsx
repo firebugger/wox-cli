@@ -26,17 +26,17 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-	return {
-		list: state.list
-	}
+  return {
+    list: state.list
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
-	return {
-		fetchList: () => {
-			dispatch(actions.featchList());
-		}
-	}
+  return {
+    fetchList: () => {
+      dispatch(actions.featchList());
+    }
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
