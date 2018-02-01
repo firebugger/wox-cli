@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import { actions } from '../../actions';
 import styles from './style.mod.less';
 import UserList from '../../components/user-list';
-import Header from 'app/components/header';
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +15,6 @@ class App extends Component {
   render() {
     return(
       <div className={cx('app')}>
-        <Header />
         <UserList dataSource={this.props.list} />
       </div>
     )
