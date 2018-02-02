@@ -30,7 +30,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		fetchList: () => {
-			dispatch(actions.featchList());
+			dispatch(actions.fetchList());
 		}
 	}
 }
