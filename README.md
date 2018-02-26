@@ -19,7 +19,7 @@ $ wox --help
 
   Commands:
 
-    init [type]  initialize, default: react component
+    init [type]  initialize, default: react
 
   Options:
 
@@ -41,16 +41,20 @@ $ wox init [type]
 
 #### react-admin-toolkit
 
-> 初始化一个后台系统页面的项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
+> 初始化一个基于 `react` 的后台系统项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
 
 #### react-general-toolkit
 
-> 初始化一个通用的项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
+> 初始化一个基于 `react` 的通用项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
 
 #### react-spa-toolkit
 
-> 初始化一个单页面应用的项目。支持 `react-router`、`redux`、`redux-saga`、`less`、`css-modules`
+> 初始化一个基于 `react` 的单页面应用项目。支持 `react-router`、`redux`、`redux-saga`、`less`、`css-modules`
+
+#### vue-spa-toolkit
+
+> 初始化一个基于 `vue` 的单页面应用项目。支持 `vue-router`、`vuex`
 
 ## TODO
 
-- [ ] webpack 升级到 2.x(or 3.x)
+- [ ] `react-*-toolkit` webpack 升级到 2.x(or 3.x)
