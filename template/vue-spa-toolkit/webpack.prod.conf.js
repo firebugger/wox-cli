@@ -15,11 +15,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ora = require('ora');
 const rm = require('rimraf');
 const chalk = require('chalk');
+const { publicPath, gitVersion } = require('./publicPath.config');
 
-const currentDir = __dirname.substr(__dirname.lastIndexOf('/') + 1);
-let gitVersion = fs.readFileSync(path.resolve(__dirname, './.git/HEAD'), 'utf8');
-gitVersion = gitVersion.split('/heads/')[1].replace(/\s/g, '');
-const versionNum = gitVersion.split('/')[1];
 if (gitVersion === 'master') {
   console.log(chalk.red.bold('\n🚨  严禁在 master 分支上构建！请拉取日常分支 `daily/x.y.z`！\n'));
   process.exit(0);
@@ -33,7 +30,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'js/[name].js',
-    publicPath: `//www.quimg.com/${currentDir}/${versionNum}/`
+    publicPath
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
