@@ -6,7 +6,9 @@ import autoprefixer from 'autoprefixer';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 const path = require('path');
 const find = require('find');
+import buildConfig from './build.config.js';
 
+const { entries } = buildConfig;
 const files = find.fileSync('./src/js/');
 const entrys = {};
 const entrysArr = [];
@@ -28,11 +30,25 @@ for (let i = 0; i < files.length; i++) {
   }
 }
 
+let filterEntries = {};
+if (Array.isArray(entries) && entries.length > 0) {
+  for (let e = 0; e < entries.length; e++) {
+    const entry = entries[e];
+    for (let f in entrys) {
+      if (f.indexOf(entry) != -1) {
+        filterEntries[f] = entrys[f];
+      }
+    }
+  }
+} else {
+  filterEntries = entrys;
+}
+
 const config = {
   debug: true,
   devtool: 'cheap-module-eval-source-map',
   noInfo: true,
-  entry: entrys,
+  entry: filterEntries,
   target: 'web',
   output: {
     path: `${__dirname}/src`,
