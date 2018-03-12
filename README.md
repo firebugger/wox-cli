@@ -19,7 +19,7 @@ $ wox --help
 
   Commands:
 
-    init [type]  initialize, default: react
+    init [type]  initialize, default: react-component
 
   Options:
 
@@ -35,7 +35,7 @@ $ wox init [type]
 
 ## Type
 
-#### react *(default)*
+#### react-component *(default)*
 
 > 初始化一个 `react` 基础组件。支持 `less`、`css-modules`
 
@@ -62,3 +62,4 @@ $ wox init [type]
 ## TODO
 
 - [ ] `react-*-toolkit` webpack 升级到 2.x(or 3.x)
+- [ ] `react-*-toolkit` antd 升级到 3.x
