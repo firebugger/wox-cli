@@ -1,14 +1,14 @@
 // action types
-export const FEATCH_LIST = 'FEATCH_LIST';
-export const FEATCH_LIST_SUCCESS = 'FEATCH_LIST_SUCCESS';
+export const FETCH_LIST = 'FETCH_LIST';
+export const FETCH_LIST_SUCCESS = 'FETCH_LIST_SUCCESS';
 
 // action creator
 export const actions = {
-  featchList: () => ({
-    type: FEATCH_LIST,
+  fetchList: () => ({
+    type: FETCH_LIST,
   }),
-  featchListSuccess: data => ({
-    type: FEATCH_LIST_SUCCESS,
+  fetchListSuccess: data => ({
+    type: FETCH_LIST_SUCCESS,
     payload: data,
   }),
 };
