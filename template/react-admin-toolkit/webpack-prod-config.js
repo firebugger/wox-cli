@@ -4,11 +4,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const find = require('find');
 const path = require('path');
 
-const currentDir = __dirname.substr(__dirname.lastIndexOf('/') + 1);
 const files = find.fileSync('./src/js/');
 const entrys = {};
 const entrysArr = [];
 const isWindows = /^win/.test(process.platform);
+const currentDir = __dirname.substr(__dirname.lastIndexOf(isWindows ? '\\' : '/') + 1);
 const regSlash = isWindows ? '\\\\' : '\/';
 const re = new RegExp('[\\w\\W]*src' + regSlash + '([\\w\\W]+)\\.js$');
 for(var i=0;i<files.length;i++){
