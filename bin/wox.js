@@ -9,7 +9,7 @@ let cmd, type;
 program
   .version(pkgJSON.version)
   .command('init [type]')
-  .description('initialize a template, default: `react`, also support `react-admin-toolkit | react-general-toolkit | react-spa-toolkit`')
+  .description('initialize template, default: `react-component`, also support `react-admin-toolkit | react-general-toolkit | react-spa-toolkit | vue-multi-toolkit | vue-spa-toolkit`')
   .action((type) => {
     woxInit(type);
   });
