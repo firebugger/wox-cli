@@ -1,0 +1,27 @@
+{
+  "name": "wox-vue-calendar",
+  "version": "0.0.1",
+  "description": "wox vue calendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/firebugger/wox-vue-calendar.git"
+  },
+  "keywords": [
+    "vue",
+    "wox",
+    "calendar"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firebugger/wox-vue-calendar/issues"
+  },
+  "homepage": "https://github.com/firebugger/wox-vue-calendar#readme",
+  "devDependencies": {
+    "vue-awesome-swiper": "^3.1.3"
+  }
+}
