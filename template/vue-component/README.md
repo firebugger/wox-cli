@@ -8,4 +8,7 @@
   // npm 
   $ npm i component-name
 
+  // 本地测试
+  $ npm start
+
 ```
