@@ -9,10 +9,6 @@
         "sourceType": "module"
     },
     "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
         "linebreak-style": [
             "error",
             "unix"
@@ -24,6 +20,10 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-console": [0]
+    },
+    "globals": {
+      "process": true
     }
 }

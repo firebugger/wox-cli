@@ -1,6 +1,6 @@
 {
   "name": "wox-cli",
-  "version": "0.12.3",
+  "version": "0.13.0",
   "description": "scaffold for create component, toolkit and so on",
   "main": "lib/wox.js",
   "bin": {
@@ -33,6 +33,7 @@
     "cross-spawn": "^5.1.0",
     "fs-extra": "^3.0.1",
     "node-emoji": "^1.5.1",
+    "prompts": "^0.1.8",
     "semver": "^5.4.1"
   },
   "devDependencies": {
