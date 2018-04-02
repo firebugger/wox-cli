@@ -20,6 +20,10 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-console": [0]
+    },
+    "globals": {
+      "process": true
     }
 }

@@ -4,19 +4,56 @@
 const program = require('commander');
 const woxInit = require('../lib/wox');
 const pkgJSON = require('../package.json');
-let cmd, type;
 
+program.version(pkgJSON.version, '-v, --version');
+
+/**
+ * 初始化套件
+ */
 program
-  .version(pkgJSON.version)
-  .command('init [type]')
-  .description('initialize template, default: `react-component`, also support `react-admin-toolkit | react-general-toolkit | react-spa-toolkit | vue-multi-toolkit | vue-spa-toolkit`')
+  .command('toolkit [type]')
+  .description('initialize a toolkit, example: `wox toolkit ca-admin`')
   .action((type) => {
-    woxInit(type);
+    if (!type) {
+      return;
+    }
+
+    woxInit(type, 'toolkit');
   });
 
-if (!process.argv.slice(2).length) {
+/**
+ * 新增页面
+ */
+program
+  .command('page [type]')
+  .description('add a page, example: `wox page ca-admin`')
+  .action((type) => {
+    if (!type) {
+      return;
+    }
+
+    woxInit(type, 'page');
+  });
+
+/**
+ * 初始化组件
+ */
+program
+  .command('component [type]')
+  .description('initialize a component, example: `wox component react`')
+  .action((type) => {
+    if (!type) {
+      return;
+    }
+
+    woxInit(type, 'component');
+  });
+
+if (
+  !process.argv.slice(2).length ||
+  ['-v', '--version', '-h', '--help'].indexOf(process.argv.slice(2)[0]) === -1 && !process.argv.slice(3).length
+) {
   program.outputHelp();
 }
-
 
 program.parse(process.argv);
