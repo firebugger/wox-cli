@@ -58,35 +58,25 @@ $ wox component react   // 初始化组件
 
 #### component
 
-* *react*
+> 目前支持的组件类型如下
 
-> 初始化一个 `react` 基础组件。支持 `less`、`css-modules`
+* **react**: 初始化一个 `react` 基础组件。支持 `less`、`css-modules`
 
-* *vue*
-
-> 初始化一个 `vue` 基础组件。
+* **vue**: 初始化一个 `vue` 基础组件。
 
 #### toolkit
 
-* *react-admin*
+> 目前支持的套件类型如下
 
-> 初始化一个基于 `react` 的后台系统项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
+* **react-admin**: 初始化一个基于 `react` 的后台系统项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
 
-* *react-general*
+* **react-general**: 初始化一个基于 `react` 的通用项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
 
-> 初始化一个基于 `react` 的通用项目。支持 `redux`、`redux-saga`、`less`、`css-modules`
+* **react-spa**: 初始化一个基于 `react` 的单页面应用项目。支持 `react-router`、`redux`、`redux-saga`、`less`、`css-modules`
 
-* *react-spa*
+* **vue-multi**: 初始化一个基于 `vue` 的多页面应用项目。支持 `vuex`
 
-> 初始化一个基于 `react` 的单页面应用项目。支持 `react-router`、`redux`、`redux-saga`、`less`、`css-modules`
-
-* *vue-multi*
-
-> 初始化一个基于 `vue` 的多页面应用项目。支持 `vuex`
-
-* *vue-spa*
-
-> 初始化一个基于 `vue` 的单页面应用项目。支持 `vue-router`、`vuex`
+* **vue-spa**: 初始化一个基于 `vue` 的单页面应用项目。支持 `vue-router`、`vuex`
 
 ## TODO
 
