@@ -9,7 +9,6 @@ const config = {
     filename: 'index.js',
   },
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
@@ -22,40 +21,102 @@ const config = {
     new ExtractTextPlugin('styles.css')
   ],
   resolve: {
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.web.js', '.js', '.json', '.jsx', '.less']
+    extensions: ['.web.js', '.js', '.json', '.jsx', '.less']
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
         exclude: /node_modules/,
+        use: [
+          { loader: 'babel-loader' }
+        ],
       },
       {
         test: /\.(less|css)$/,
         exclude: /\.mod\.(less|css)/,
-        loader: ExtractTextPlugin.extract('style', 'css!postcss?parser=postcss-less')
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  require('autoprefixer'),
+                ]
+              }
+            },
+            {
+              loader: 'less-loader',
+              options: {
+                javascriptEnabled: true,
+                // modifyVars: {
+                //   "primary-color": "#24292e",
+                // }
+              }
+            },
+          ]
+        }),
       },
       {
         test: /\.mod\.(less|css)$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss?parser=postcss-less')
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                modules: true,
+                importLoaders: 2,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  require('autoprefixer'),
+                ]
+              }
+            },
+            {
+              loader: 'less-loader',
+              options: {
+                javascriptEnabled: true,
+                // modifyVars: {
+                //   "primary-color": "#24292e",
+                // }
+              }
+            },
+          ]
+        }),
       },
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
-        loader: 'url?limit=10000',
+        use: {
+          loader: 'url',
+          options: {
+            limit: 1024,
+          }
+        },
       },
       {
         test: /\.(gif|jpe?g|png|ico)$/,
-        loader: 'url?limit=10000',
+        use: {
+          loader: 'url',
+          options: {
+            limit: 1024,
+          }
+        },
       },
     ],
-  },
-  postcss() {
-    return [
-      require('precss'),
-      require('autoprefixer'),
-    ];
   },
 };
 

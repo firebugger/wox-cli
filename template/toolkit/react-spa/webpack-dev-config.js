@@ -1,14 +1,11 @@
 import webpack from 'webpack';
-import precss from 'precss';
 import autoprefixer from 'autoprefixer';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 const path = require('path');
 
 const config = {
-  debug: true,
   devtool: 'cheap-module-eval-source-map',
-  noInfo: true,
   entry: {
     'index': [
       'react-hot-loader/patch',
@@ -28,41 +25,104 @@ const config = {
       __DEV__: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin('styles.css'),
     new DashboardPlugin()
   ],
   resolve: {
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.web.js', '.js', '.jsx', '.json', '.less']
+    extensions: ['.web.js', '.js', '.jsx', '.json', '.less']
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
         exclude: /node_modules/,
+        use: [
+          { loader: 'babel-loader' }
+        ],
       },
       {
         test: /\.(less|css)$/,
         exclude: /\.mod\.(less|css)/,
-        loader: ExtractTextPlugin.extract('style', 'css!postcss?parser=postcss-less')
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  autoprefixer,
+                ]
+              }
+            },
+            {
+              loader: 'less-loader',
+              options: {
+                javascriptEnabled: true,
+                // modifyVars: {
+                //   "primary-color": "#24292e",
+                // }
+              }
+            },
+          ]
+        }),
       },
       {
         test: /\.mod\.(less|css)$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss?parser=postcss-less')
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                importLoaders: 2,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  autoprefixer,
+                ]
+              }
+            },
+            {
+              loader: 'less-loader',
+              options: {
+                javascriptEnabled: true,
+                // modifyVars: {
+                //   "primary-color": "#24292e",
+                // }
+              }
+            },
+          ]
+        }),
       },
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
-        loader: 'url?limit=10000',
+        use: {
+          loader: 'url',
+          options: {
+            limit: 10000000,
+          }
+        },
       },
       {
         test: /\.(gif|jpe?g|png|ico)$/,
-        loader: 'url?limit=10000',
+        use: {
+          loader: 'url',
+          options: {
+            limit: 10000000,
+          }
+        },
       },
     ],
   },
-  postcss: () => [precss, autoprefixer],
 };
 
 export default config;

@@ -11,12 +11,19 @@
   ],
   "plugins": [
     "react-hot-loader/babel",
-    ["import", { "style": "css", "libraryName": "antd" }],
-    ["transform-runtime", {
-      "helpers": false,
-      "polyfill": false,
-      "regenerator": true,
-      "moduleName": "babel-runtime"
-    }]
+    [
+      "import", {
+        "style": true, 
+        "libraryName": "antd"
+      }
+    ],
+    [
+      "transform-runtime", {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      }
+    ]
   ]
 }

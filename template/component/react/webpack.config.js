@@ -1,9 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const DashboardPlugin = require('webpack-dashboard/plugin');
-const autoprefixer = require('autoprefixer');
-const precss = require('precss');
-const env = process.env.NODE_ENV;
 
 const config = {
   entry: './app.js',
@@ -19,32 +16,90 @@ const config = {
     new DashboardPlugin()
   ],
   resolve: {
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.js', '.jsx', '.json', '.less'],
+    extensions: ['.js', '.jsx', '.json', '.less'],
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
         exclude: /node_modules/,
+        use: [
+          { loader: 'babel-loader' }
+        ],
       },
       {
         test: /\.(less|css)$/,
         exclude: /\.mod\.(less|css)/,
-        loader: 'style!css!postcss?parser=postcss-less'
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                require('autoprefixer'),
+              ]
+            }
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true,
+            }
+          },
+        ],
       },
       {
         test: /\.mod\.(less|css)$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss?parser=postcss-less'
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+              modules: true,
+              importLoaders: 2,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                require('autoprefixer'),
+              ]
+            }
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true,
+            }
+          },
+        ],
       },
       {
         test: /\.(gif|jpe?g|png|ico)$/,
-        loader: 'url?limit=1024&name=[name]-[sha512:hash:base64:7].[ext]&outputPath=/images/'
+        use: {
+          loader: 'url',
+          options: {
+            limit: 1024,
+            name: '[name]-[sha512:hash:base64:7].[ext]',
+            outputPath: '/images/'
+          }
+        }
       }
     ]
-  },
-  postcss: () => [precss, autoprefixer],
+  }
 };
 
 module.exports = config;

@@ -73,6 +73,11 @@ var WoxComponent = function (_Component) {
         'div',
         { className: cx('wrapper') },
         _react2.default.createElement(
+          'span',
+          { className: cx('inner') },
+          'click btn: '
+        ),
+        _react2.default.createElement(
           _button2.default,
           {
             type: 'primary',
