@@ -19,7 +19,7 @@ module.exports = {
 
 /**
  * cmds:
- * wox init -c react        --> component/react
- * wox init -t react-admin  --> toolkit/react-admin
- * wox init -p react-admin  --> page/react-admin
+ * wox component react        --> component/react
+ * wox toolkit   react-admin  --> toolkit/react-admin
+ * wox page      react-admin  --> page/react-admin
  */
