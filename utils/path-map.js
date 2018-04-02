@@ -7,6 +7,7 @@ module.exports = {
   'react-admin-toolkit': 'react-admin-toolkit',
   'react-general-toolkit': 'react-general-toolkit',
   'react-spa-toolkit': 'react-spa-toolkit',
+  'vue-component': 'vue-component',
   'vue-spa-toolkit': 'vue-spa-toolkit',
   'vue-multi-toolkit': 'vue-multi-toolkit',
 };

@@ -51,6 +51,10 @@ $ wox init [type]
 
 > 初始化一个基于 `react` 的单页面应用项目。支持 `react-router`、`redux`、`redux-saga`、`less`、`css-modules`
 
+#### vue-component
+
+> 初始化一个 `vue` 基础组件。
+
 #### vue-multi-toolkit
 
 > 初始化一个基于 `vue` 的多页面应用项目。支持 `vuex`
@@ -58,10 +62,6 @@ $ wox init [type]
 #### vue-spa-toolkit
 
 > 初始化一个基于 `vue` 的单页面应用项目。支持 `vue-router`、`vuex`
-
-#### vue-component
-
-> 初始化一个 `vue` 基础组件。 
 
 ## TODO
 
