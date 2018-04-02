@@ -59,6 +59,10 @@ $ wox init [type]
 
 > 初始化一个基于 `vue` 的单页面应用项目。支持 `vue-router`、`vuex`
 
+#### vue-component
+
+> 初始化一个 `vue` 基础组件。 
+
 ## TODO
 
 - [ ] `react-*-toolkit` webpack 升级到 2.x(or 3.x)
