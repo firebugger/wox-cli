@@ -78,6 +78,12 @@ $ wox component react   // 初始化组件
 
 * **vue-spa**: 初始化一个基于 `vue` 的单页面应用项目。支持 `vue-router`、`vuex`
 
+#### page
+
+> `需要手动进入相关目录再进行初始化` 目前支持的页面类型如下
+
+* **react-admin**: 初始化一个基于 `react` 的后台系统的页面。支持 `redux`、`redux-saga`、`less`、`css-modules`
+
 ## TODO
 
 - [x] `react-*-toolkit` webpack 升级到 3.x
