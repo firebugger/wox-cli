@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import TestComponent from './component';
+import TestComponent from '../src/index.vue';
 
 export default {
     name: 'App',
