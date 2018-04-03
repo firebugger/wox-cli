@@ -15,10 +15,9 @@ module.exports = {
     filename: "[name].js"
   },
   module: {
-    loaders: [
+    rules: [
       {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
       {test: /\.vue$/, loader: 'vue-loader'},
-      {test: /\.less$/, loader: "css?sourceMap!postcss!less?sourceMap"},
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
