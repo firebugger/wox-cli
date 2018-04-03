@@ -29,7 +29,6 @@ module.exports = {
       },
     ]
   },
-  // postcss: [autoprefixer({browsers: ['last 2 versions', 'Android 2.3']})],
   plugins: [
     new webpack.optimize.UglifyJsPlugin()
   ]
