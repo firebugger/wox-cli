@@ -10,7 +10,7 @@ try {
   gitVersion = gitHead.split('/heads/')[1].replace(/\s/g, '');
   versionNum = gitVersion.split('/')[1];
 } catch (e) { 
-  console.log('not a git project!');
+  console.log('✘ not a git project!\n');
 }
 
 const publicPath = `//www.quimg.com/${currentDir}/${versionNum}/`;
