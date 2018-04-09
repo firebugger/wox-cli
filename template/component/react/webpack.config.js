@@ -113,7 +113,7 @@ const config = {
       {
         test: /\.(gif|jpe?g|png|ico)$/,
         use: {
-          loader: 'url',
+          loader: 'url-loader',
           options: {
             limit: 1024,
             name: '[name]-[sha512:hash:base64:7].[ext]',

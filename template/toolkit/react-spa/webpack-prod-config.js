@@ -124,7 +124,7 @@ const config = {
       {
         test: /\.(otf|eot|svg|ttf|woff|woff2).*$/,
         use: {
-          loader: 'url',
+          loader: 'url-loader',
           options: {
             limit: 1024,
           }
@@ -133,7 +133,7 @@ const config = {
       {
         test: /\.(gif|jpe?g|png|ico)$/,
         use: {
-          loader: 'url',
+          loader: 'url-loader',
           options: {
             limit: 1024,
           }
