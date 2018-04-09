@@ -33,7 +33,7 @@ const config = {
         ],
       },
       {
-        test: /\.(less|css)$/,
+        test: /\.less$/,
         exclude: /\.mod\.(less|css)/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -59,6 +59,29 @@ const config = {
                 // modifyVars: {
                 //   "primary-color": "#24292e",
                 // }
+              }
+            },
+          ]
+        }),
+      },
+      {
+        test: /\.css$/,
+        exclude: /\.mod\.(less|css)/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  require('autoprefixer'),
+                ]
               }
             },
           ]
