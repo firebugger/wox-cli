@@ -28,7 +28,7 @@ const config = {
         ],
       },
       {
-        test: /\.(less|css)$/,
+        test: /\.less$/,
         exclude: /\.mod\.(less|css)/,
         use: [
           {
@@ -52,6 +52,29 @@ const config = {
             loader: 'less-loader',
             options: {
               javascriptEnabled: true,
+            }
+          },
+        ],
+      },
+      {
+        test: /\.css/,
+        exclude: /\.mod\.(less|css)/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                require('autoprefixer'),
+              ]
             }
           },
         ],
