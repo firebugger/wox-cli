@@ -1,6 +1,6 @@
 {
-  "name": "wox-vue-component-test",
-  "version": "0.0.1",
+  "name": "vue-component",
+  "version": "1.0.0",
   "description": "basic vue component",
   "main": "dist/index.js",
   "author": "",
