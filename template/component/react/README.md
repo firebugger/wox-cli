@@ -1,25 +1,18 @@
-# react-component
+# wox-react-component [![image](https://img.shields.io/npm/v/wox-react-component.svg)](https://www.npmjs.com/package/wox-react-component)
 
 ## API
 
 | 属性 | 说明 | 类型 | 默认值 |
 | ---- | ---- | ---- | ---- |
-| onFocus | 获取焦点 | Function | |
+| show | 是否显示 | Boolean | true |
 
-## Development
-
-```
-$ npm run start
-```
-
-## Build
+## Usage
 
 ```
-$ npm run build
-```
+import WoxReactComponent from 'wox-react-component';
 
-## Publish
-
-```
-$ npm publish
+render(
+  <WoxReactComponent />,
+  rootEle
+);
 ```
