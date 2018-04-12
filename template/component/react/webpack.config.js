@@ -115,7 +115,7 @@ const config = {
         use: {
           loader: 'url-loader',
           options: {
-            limit: 1024,
+            limit: 10240000,
             name: '[name]-[sha512:hash:base64:7].[ext]',
             outputPath: '/images/'
           }

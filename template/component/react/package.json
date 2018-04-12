@@ -45,6 +45,7 @@
     "react-dom": "^15.5.4",
     "rimraf": "^2.6.1",
     "style-loader": "^0.20.0",
+    "url-loader": "^1.0.0",
     "webpack": "^3.0.0",
     "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^2.0.0"
