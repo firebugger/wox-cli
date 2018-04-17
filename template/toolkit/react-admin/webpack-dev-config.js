@@ -1,11 +1,12 @@
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import autoprefixer from 'autoprefixer';
-import DashboardPlugin from 'webpack-dashboard/plugin';
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const path = require('path');
 const find = require('find');
-import buildConfig from './build.config.js';
+const buildConfig = require('./build.config.js');
+const themeConfig = require('wox-admin-theme');
 
 const { entries } = buildConfig;
 const files = find.fileSync('./src/js/');
@@ -99,9 +100,7 @@ const config = {
               loader: 'less-loader',
               options: {
                 javascriptEnabled: true,
-                // modifyVars: {
-                //   "primary-color": "#24292e",
-                // }
+                modifyVars: themeConfig
               }
             },
           ]
@@ -152,9 +151,7 @@ const config = {
               loader: 'less-loader',
               options: {
                 javascriptEnabled: true,
-                // modifyVars: {
-                //   "primary-color": "#24292e",
-                // }
+                modifyVars: themeConfig
               }
             },
           ]

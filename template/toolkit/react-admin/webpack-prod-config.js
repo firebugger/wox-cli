@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const find = require('find');
 const path = require('path');
+const themeConfig = require('wox-admin-theme');
 
 const files = find.fileSync('./src/js/');
 const entrys = {};
@@ -89,9 +90,7 @@ const config = {
               loader: 'less-loader',
               options: {
                 javascriptEnabled: true,
-                // modifyVars: {
-                //   "primary-color": "#24292e",
-                // }
+                modifyVars: themeConfig
               }
             },
           ]
@@ -146,9 +145,7 @@ const config = {
               loader: 'less-loader',
               options: {
                 javascriptEnabled: true,
-                // modifyVars: {
-                //   "primary-color": "#24292e",
-                // }
+                modifyVars: themeConfig
               }
             },
           ]

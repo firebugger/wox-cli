@@ -72,6 +72,7 @@
     "webpack": "^3.0.0",
     "webpack-dashboard": "^1.0.2",
     "webpack-dev-middleware": "^2.0.0",
-    "webpack-hot-middleware": "^2.12.2"
+    "webpack-hot-middleware": "^2.12.2",
+    "wox-admin-theme": "^1.0.0"
   }
 }
