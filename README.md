@@ -87,4 +87,5 @@ $ wox component react   // 初始化组件
 ## TODO
 
 - [x] `react-*-toolkit` webpack 升级到 3.x
-- [ ] `react-*-toolkit` antd 升级到 3.x
+- [x] `react-*-toolkit` antd 升级到 3.x
+- [x] `react-*-toolkit` react 升级到 16.x
