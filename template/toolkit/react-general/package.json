@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "react general toolkit",
   "main": "index.js",
-  "theme": "",
   "scripts": {
     "lint": "eslint --fix ./src/**/*",
     "check": "modules-version-check --cli yarn update",
@@ -21,8 +20,6 @@
     "webpack",
     "npm"
   ],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
     "antd": "^3.0.0",
     "axios": "^0.16.2",
@@ -73,5 +70,6 @@
     "webpack-dashboard": "^1.0.2",
     "webpack-dev-middleware": "^2.0.0",
     "webpack-hot-middleware": "^2.12.2"
-  }
+  },
+  "license": "MIT"
 }

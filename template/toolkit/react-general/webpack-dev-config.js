@@ -1,7 +1,7 @@
-import webpack from 'webpack';
-import autoprefixer from 'autoprefixer';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import DashboardPlugin from 'webpack-dashboard/plugin';
+const webpack =  require('webpack');
+const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const path = require('path');
 
 const config = {
