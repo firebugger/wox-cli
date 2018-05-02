@@ -14,7 +14,7 @@ module.exports = {
     app: ['./demo/main.js']
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './lib'),
     filename: '[name].js',
     publicPath: '/'
   },
@@ -59,8 +59,8 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [
-          resolve('src'), 
-          resolve('test'), 
+          resolve('src'),
+          resolve('test'),
           resolve('node_modules/webpack-dev-server/client')
         ]
       },
@@ -90,7 +90,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        loader: "style-loader!css-loader!less-loader",
+        loader: 'style-loader!css-loader!less-loader',
       }
     ].concat(process.env.NODE_ENV === 'production' ? styleLoaders({sourceMap: true, usePostCSS: true, extract: true}) : styleLoaders({sourceMap: true, usePostCSS: true}))
   },

@@ -1,23 +1,30 @@
-var path = require('path');
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var pkg = require('./package.json');
+const path = require('path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const pkg = require('./package.json');
 
 module.exports = {
   entry: {
     'index': path.join(__dirname, 'src/index.vue')
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'lib'),
     publicPath: '/',
     library: pkg.name,
     libraryTarget: 'umd',
-    filename: "[name].js"
+    filename: '[name].js'
   },
   module: {
     rules: [
-      {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
-      {test: /\.vue$/, loader: 'vue-loader'},
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
