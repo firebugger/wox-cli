@@ -8,9 +8,7 @@ scaffold for wox
 $ npm install wox-cli -g
 ```
 
-## Environment
-
-* node: **>=8.0.0**
+Node.js >= 8.0.0 required.
 
 ## Usage
 
