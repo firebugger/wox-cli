@@ -7,7 +7,7 @@ export default {
       let res = await fetchData();
       if (res.code == 0) {
         commit(CHANGE_LOADING, false);
-        commit(SET_DATA, res.data.groupBOList);
+        commit(SET_DATA, res.data);
       } else {
         console.log(`获取数据出错！${res.message}`);
       }
