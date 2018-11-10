@@ -1,0 +1,168 @@
+.ad-swiper {
+  margin-bottom: 40px;
+
+  .ad-item {
+    display: block;
+    position: relative;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    span {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      vertical-align: middle;
+      color: #fff;
+      font-size: 40px;
+      text-shadow: 0 5px 15px #333;
+      padding: 0 80px;
+      word-break: break-all;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.product-item {
+  display: block;
+  margin: 0 20px 30px 20px;
+
+  .picture-wrapper {
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .top-tips {
+      position: absolute;
+      top: 20px;
+      left: -6px;
+      height: 60px;
+      padding: 0 16px;
+      line-height: 60px;
+      box-shadow: 0 5px 15px #333;
+      font-size: 28px;
+      color: #fff;
+      text-align: center;
+      background-color: #f30;
+      border-radius: 4px;
+    }
+
+    .right-tag {
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      font-size: 24px;
+      color: #fff;
+      overflow: hidden;
+      font-weight: bold;
+
+      .day {
+        float: left;
+        background-color: rgba(0, 0, 0, .2);
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 8px 0 0 8px;
+        padding: 0 10px;
+      }
+
+      .city {
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        background-color: rgba(0, 0, 0, .2);
+        padding: 0 10px;
+        border-radius: 0 8px 8px 0;
+      }
+    }
+
+    .code {
+      height: 36px;
+      line-height: 36px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      padding: 4px 10px;
+      text-shadow: 0 5px 15px #333;
+    }
+  }
+
+  .content-wrapper {
+    padding: 20px 0;
+
+    .title {
+      color: #666;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      font-size: 28px;
+      line-height: 42px;
+    }
+
+    .bottom-info {
+      padding-top: 16px;
+      line-height: 64px;
+
+      .price {
+        display: inline-block;
+        margin-right: 20px;
+        color: #333;
+        font-size: 24px;
+        position: relative;
+        vertical-align: middle;
+
+        span {
+          color: #f33;
+          font-size: 32px;
+          font-weight: 700;
+        }
+
+        .discount-prefix {
+          font-size: 26px;
+        }
+      }
+
+      .tag-list {
+        display: inline-block;
+        color: #fff;
+        font-size: 24px;
+        line-height: 32px;
+
+        span {
+          display: inline-block;
+          padding: 4px 8px;
+          margin-right: 8px;
+          border: 1px solid #36bae8;
+          border-radius: 6px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &.ic {
+            background-color: #36bae8;
+          }
+
+          &.normal {
+            background-color: #fff;
+            border: 1px solid #999;
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+}

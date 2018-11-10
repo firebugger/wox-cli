@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 
-const currentDir = __dirname.substr(__dirname.lastIndexOf('/') + 1);
+// windows 路径问题 replace 转下
+const currentDir = __dirname.substr(__dirname.replace(/\\/g, '/').lastIndexOf('/') + 1);
 let gitVersion = 'daily/0.0.1';
 let versionNum = '0.0.1';
 
@@ -14,7 +15,7 @@ try {
   console.log(chalk.yellowBright.bold('✘ not a git project!\n'));
 }
 
-const publicPath = `//www.quimg.com/${currentDir}/${versionNum}/`;
+const publicPath = `//h5.quimg.com/${currentDir}/${versionNum}/dist/`;
 
 module.exports = { publicPath, gitVersion };
 // module.exports = { publicPath: '//www.quimg.com', gitVersion: 'daily/0.0.1' };

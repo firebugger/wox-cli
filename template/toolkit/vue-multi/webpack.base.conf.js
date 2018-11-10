@@ -1,7 +1,6 @@
 'use strict';
 
 const path = require('path');
-const fs = require('fs');
 const find = require('find');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -21,7 +20,7 @@ const pluginList = [];
 for (let i = 0; i < files.length; i++) {
   if (/\.entry\.js$/.test(files[i])) {
     const filei = files[i].replace(re, '$1');
-    entrys[filei] = `./${files[i]}`;
+    entrys[filei] = ['babel-polyfill', `./${files[i]}`];
     entrysArr.push(filei);
   }
 }
@@ -35,11 +34,6 @@ for (let j = 0; j < entrysArr.length; j++) {
     inject: 'body',
     favicon: './favicon.ico',
     title: pathname,
-    // minify: {
-    //   removeComments: true,
-    //   collapseWhitespace: true,
-    //   removeAttributeQuotes: true
-    // },
     chunks: ['common', entrysArr[j]],
   };
   pluginList.push(new HtmlWebpackPlugin(conf));
@@ -136,11 +130,7 @@ module.exports = {
     ].concat(process.env.NODE_ENV === 'production' ? styleLoaders({sourceMap: true, usePostCSS: true, extract: true}) : styleLoaders({sourceMap: true, usePostCSS: true}))
   },
   node: {
-    // prevent webpack from injecting useless setImmediate polyfill because Vue
-    // source contains it (although only uses it if it's native).
     setImmediate: false,
-    // prevent webpack from injecting mocks to Node native modules
-    // that does not make sense for the client
     dgram: 'empty',
     fs: 'empty',
     net: 'empty',

@@ -1,6 +1,6 @@
-# vue cli
-
 ## 目录结构
+
+![定制 H5 代码梳理](./xmind.png)
 
 ```
 .
@@ -24,8 +24,11 @@
 │   │   └── index.js
 │   ├── components                          // 通用组件
 │   │   └── HelloWorld.vue
-│   ├── images                              // 通用图片
-│   │   └── logo.png
+│   ├── static                              // 静态文件
+│   │   ├── image                           // 图片
+│   │   │    └── logo.png
+│   │   ├── javascript                      // 脚本
+│   │   └── style                           // 样式
 │   ├── util                                // 工具类函数
 │   └── pages                               // 页面
 │       ├── detail
@@ -43,11 +46,6 @@
 ├── webpack.dev.conf.js                     // webpack 开发配置
 └── webpack.prod.conf.js                    // webpack 生产配置
 ```
-## 相关链接
-
-> [vue-loader相关配置](https://vue-loader.vuejs.org/zh-cn/)
-
-> [webpack相关配置](https://doc.webpack-china.org/configuration/#-)
 
 ## 构建流程
 

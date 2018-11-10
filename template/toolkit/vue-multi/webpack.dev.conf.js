@@ -4,8 +4,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
 const baseWebpackConfig = require('./webpack.base.conf');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
 const notifier = require('node-notifier');
@@ -14,22 +12,21 @@ const HOST = process.env.HOST;
 const PORT = process.env.PORT && Number(process.env.PORT);
 
 const devWebpackConfig = merge(baseWebpackConfig, {
-  devtool: 'cheap-module-eval-source-map',
-
-  // these devServer options should be customized in /config/index.js
+  devtool: 'inline-source-map',
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
-        { from: /.*/, to: path.posix.join('/', 'index.html') },
-      ],
+        { from: /.*/, to: path.posix.join('/', '/index.html') },
+      ]
     },
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,
     host: HOST || '0.0.0.0',
     port: PORT || '8080',
-    open: false,
+    open: true,
+    openPage: 'index.html',
     overlay: { warnings: false, errors: true },
     publicPath: '/',
     proxy: {},
@@ -45,12 +42,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
-    // https://github.com/ampedandwired/html-webpack-plugin
-    // new HtmlWebpackPlugin({
-    //   filename: 'index.html',
-    //   template: 'index.html',
-    //   inject: true
-    // })
   ]
 });
 

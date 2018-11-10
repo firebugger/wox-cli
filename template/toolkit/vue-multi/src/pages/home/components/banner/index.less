@@ -1,0 +1,40 @@
+.banner {
+  margin: 0 auto;
+  width: 690px;
+  height: 360px;
+  overflow: hidden;
+  font-size: 0;
+
+  .banner-img {
+    display: block;
+    width: 690px;
+    height: 360px;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 99%;
+  }
+
+
+  /deep/ .swiper-pagination-bullet-active {
+    width: 16px !important;
+    height: 16px !important;
+    box-sizing: border-box;
+    background: transparent !important;
+    border: 3px solid #fff !important;
+    border-radius: 2px !important;
+    margin-right: 10px !important;
+  }
+  /deep/ .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+    background: #fff;
+    opacity: 1;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  /deep/ .swiper-slide {
+    width: 100% !important; 
+    border-radius: 8px;
+  }
+}
